@@ -1,0 +1,693 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" 
+    xmlns:rangeseekbar="http://schemas.android.com/apk/res-auto/org.frojoe.l5rSearch.widget"   
+    android:id="@+id/search"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/card_search"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:hint="@string/search_hint"
+            android:imeOptions="actionSearch"
+            android:inputType="textNoSuggestions"
+            android:enabled="true"/>
+		
+		<ImageButton
+            android:id="@+id/search_button"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/search"
+            android:contentDescription="@string/button_search"
+            android:onClick="search"/>
+		
+		<ImageButton
+		    android:id="@+id/cancel_button"
+		    android:layout_width="wrap_content"
+		    android:layout_height="match_parent"
+		    android:src="@drawable/cancel"
+		    android:contentDescription="@string/button_cancel"
+		    android:onClick="cancelSearch"
+		    android:visibility="gone"/>
+        
+    </LinearLayout>
+   
+    <ScrollView
+        android:id="@+id/additional_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        
+        <LinearLayout
+            android:id="@+id/search_options"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+                
+	        <EditText
+	            android:id="@+id/keywords_search"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:hint="@string/keywords_hint"
+	            android:imeOptions="actionSearch"
+	            android:textSize="16sp"
+	            android:inputType="textNoSuggestions"/>
+	        
+	        <EditText
+	            android:id="@+id/card_text_search"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:hint="@string/card_text_hint"
+	            android:imeOptions="actionSearch"
+	            android:textSize="16sp"
+	            android:inputType="textNoSuggestions"/>
+	        
+	        <Spinner
+	            android:id="@+id/card_type_search"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:entries="@array/card_types"
+	            android:prompt="@string/card_type_prompt"/>
+	        
+	        <Spinner
+	            android:id="@+id/clan_search"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:entries="@array/clans"
+	            android:prompt="@string/clan_prompt"/>
+	        
+	        <Spinner
+	            android:id="@+id/set_search"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:entries="@array/sets"
+	            android:prompt="@string/set_prompt"/>
+	        
+	        <Spinner
+	            android:id="@+id/rarity_search"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:entries="@array/rarities"
+	            android:prompt="@string/rarity_prompt"/>
+	        
+	        <Spinner
+	            android:id="@+id/legality_search"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:entries="@array/legalities"
+	            android:prompt="@string/legality_prompt"/>
+        
+	        <RelativeLayout
+	            android:id="@+id/adv_search_layout"
+	            android:orientation="vertical"
+	            android:visibility="gone"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content">
+	            
+	            <RelativeLayout
+	                android:id="@+id/adv_search_row0"
+	                android:layout_width="match_parent"
+	               	android:layout_height="wrap_content">
+	                
+	                <CheckBox 
+		                android:id="@+id/errata_mrp_cb"
+		                android:layout_width="wrap_content"
+		                android:layout_height="wrap_content"
+		                android:layout_alignParentLeft="true"
+		                android:text="@string/errata_mrp_cb"/>
+	                
+	            </RelativeLayout>
+	            
+	            <RelativeLayout
+	                android:id="@+id/adv_search_row1"
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+	                android:layout_below="@id/adv_search_row0">
+	            
+		            <TextView
+		                android:id="@+id/force_range_bar_label"
+		                android:layout_width="41dp"
+		                android:layout_height="wrap_content"
+		                android:layout_alignParentLeft="true"
+		                android:layout_centerVertical="true"
+		                android:layout_marginLeft="12dp"
+		                android:textColor="@color/white"
+		                android:text="@string/force_range_bar_label"
+		                android:textSize="16sp"/>
+		            
+		            <CheckBox 
+		                android:id="@+id/force_range_bar_cb"
+		                android:layout_width="wrap_content"
+		                android:layout_height="wrap_content"
+		                android:layout_alignParentRight="true"/>
+		            
+		            <TextView 
+		                android:id="@+id/force_range_bar_min_text"
+		                android:layout_width="17dp"
+						android:gravity="right"
+		                android:layout_height="wrap_content"
+		                android:layout_toRightOf="@id/force_range_bar_label"
+		                android:layout_marginLeft="3dp"
+		                android:layout_centerVertical="true"
+		                android:text="@string/force_min"/>
+		            
+		            <TextView 
+		                android:id="@+id/force_range_bar_max_text"
+		                android:layout_width="17dp"
+		                android:gravity="left"
+		                android:layout_height="wrap_content"
+		                android:layout_toLeftOf="@id/force_range_bar_cb"
+		                android:layout_centerVertical="true"
+		                android:text="@string/force_max"/>
+		            
+		            <org.frojoe.l5rSearch.widget.RangeSeekBar
+		                android:id="@+id/force_range_bar"
+		                android:layout_width="match_parent"
+		                android:layout_height="wrap_content"
+		                android:layout_toRightOf="@id/force_range_bar_min_text"
+		                android:layout_toLeftOf="@id/force_range_bar_max_text"
+		                android:layout_centerVertical="true"
+		                rangeseekbar:min="@string/force_min"
+		                rangeseekbar:max="@string/force_max"/>
+	            
+    			</RelativeLayout>
+	            
+	            <RelativeLayout
+	                android:id="@+id/adv_search_row2"
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+	                android:layout_below="@id/adv_search_row1">
+	            
+	    			<TextView
+		                android:id="@+id/chi_range_bar_label"
+		                android:layout_width="41dp"
+		                android:layout_height="wrap_content"
+		                android:layout_alignParentLeft="true"
+		                android:layout_centerVertical="true"
+		                android:layout_marginLeft="12dp"
+		                android:textColor="@color/white"
+		                android:text="@string/chi_range_bar_label"
+		                android:textSize="16sp"/>
+		            
+		            <CheckBox 
+		                android:id="@+id/chi_range_bar_cb"
+		                android:layout_width="wrap_content"
+		                android:layout_height="wrap_content"
+		                android:layout_alignParentRight="true"/>
+		            
+		            <TextView 
+		                android:id="@+id/chi_range_bar_min_text"
+		                android:layout_width="17dp"
+						android:gravity="right"
+		                android:layout_height="wrap_content"
+		                android:layout_toRightOf="@id/chi_range_bar_label"
+		                android:layout_marginLeft="3dp"
+		                android:layout_centerVertical="true"
+		                android:text="@string/chi_min"/>
+		            
+		            <TextView 
+		                android:id="@+id/chi_range_bar_max_text"
+		                android:layout_width="17dp"
+		                android:gravity="left"
+		                android:layout_height="wrap_content"
+		                android:layout_toLeftOf="@id/chi_range_bar_cb"
+		                android:layout_centerVertical="true"
+		                android:text="@string/chi_max"/>
+		            
+		            <org.frojoe.l5rSearch.widget.RangeSeekBar
+		                android:id="@+id/chi_range_bar"
+		                android:layout_width="match_parent"
+		                android:layout_height="wrap_content"
+		                android:layout_toRightOf="@id/chi_range_bar_min_text"
+		                android:layout_toLeftOf="@id/chi_range_bar_max_text"
+		                android:layout_centerVertical="true"
+		                rangeseekbar:min="@string/chi_min"
+		                rangeseekbar:max="@string/chi_max"/>
+
+		        </RelativeLayout>
+	            
+	            <RelativeLayout
+	                android:id="@+id/adv_search_row3"
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+	                android:layout_below="@id/adv_search_row2">
+
+					<TextView
+		                android:id="@+id/hr_range_bar_label"
+		                android:layout_width="41dp"
+		                android:layout_height="wrap_content"
+		                android:layout_alignParentLeft="true"
+		                android:layout_centerVertical="true"
+		                android:layout_marginLeft="12dp"
+		                android:textColor="@color/white"
+		                android:text="@string/hr_range_bar_label"
+		                android:textSize="16sp"/>
+		            
+		            <CheckBox 
+		                android:id="@+id/hr_range_bar_cb"
+		                android:layout_width="wrap_content"
+		                android:layout_height="wrap_content"
+		                android:layout_alignParentRight="true"/>
+		            
+		            <TextView 
+		                android:id="@+id/hr_range_bar_min_text"
+		                android:layout_width="17dp"
+						android:gravity="right"
+		                android:layout_height="wrap_content"
+		                android:layout_toRightOf="@id/hr_range_bar_label"
+		                android:layout_marginLeft="3dp"
+		                android:layout_centerVertical="true"
+		                android:text="@string/hr_min"/>
+		            
+		            <TextView 
+		                android:id="@+id/hr_range_bar_max_text"
+		                android:layout_width="17dp"
+		                android:gravity="left"
+		                android:layout_height="wrap_content"
+		                android:layout_toLeftOf="@id/hr_range_bar_cb"
+		                android:layout_centerVertical="true"
+		                android:text="@string/hr_max"/>
+		            
+		            <org.frojoe.l5rSearch.widget.RangeSeekBar
+		                android:id="@+id/hr_range_bar"
+		                android:layout_width="match_parent"
+		                android:layout_height="wrap_content"
+		                android:layout_toRightOf="@id/hr_range_bar_min_text"
+		                android:layout_toLeftOf="@id/hr_range_bar_max_text"
+		                android:layout_centerVertical="true"
+		                rangeseekbar:min="@string/hr_min"
+		                rangeseekbar:max="@string/hr_max"/>
+		        
+		        </RelativeLayout>
+	            
+	            <RelativeLayout
+	                android:id="@+id/adv_search_row4"
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+	                android:layout_below="@id/adv_search_row3">
+
+					<TextView
+		                android:id="@+id/gc_range_bar_label"
+		                android:layout_width="41dp"
+		                android:layout_height="wrap_content"
+		                android:layout_alignParentLeft="true"
+		                android:layout_centerVertical="true"
+		                android:layout_marginLeft="12dp"
+		                android:textColor="@color/white"
+		                android:text="@string/gc_range_bar_label"
+		                android:textSize="16sp"/>
+		            
+		            <CheckBox 
+		                android:id="@+id/gc_range_bar_cb"
+		                android:layout_width="wrap_content"
+		                android:layout_height="wrap_content"
+		                android:layout_alignParentRight="true"/>
+		            
+		            <TextView 
+		                android:id="@+id/gc_range_bar_min_text"
+		                android:layout_width="17dp"
+						android:gravity="right"
+		                android:layout_height="wrap_content"
+		                android:layout_toRightOf="@id/gc_range_bar_label"
+		                android:layout_marginLeft="3dp"
+		                android:layout_centerVertical="true"
+		                android:text="@string/gc_min"/>
+		            
+		            <TextView 
+		                android:id="@+id/gc_range_bar_max_text"
+		                android:layout_width="17dp"
+		                android:gravity="left"
+		                android:layout_height="wrap_content"
+		                android:layout_toLeftOf="@id/gc_range_bar_cb"
+		                android:layout_centerVertical="true"
+		                android:text="@string/gc_max"/>
+		            
+		            <org.frojoe.l5rSearch.widget.RangeSeekBar
+		                android:id="@+id/gc_range_bar"
+		                android:layout_width="match_parent"
+		                android:layout_height="wrap_content"
+		                android:layout_toRightOf="@id/gc_range_bar_min_text"
+		                android:layout_toLeftOf="@id/gc_range_bar_max_text"
+		                android:layout_centerVertical="true"
+		                rangeseekbar:min="@string/gc_min"
+		                rangeseekbar:max="@string/gc_max"/>
+
+		        </RelativeLayout>
+	            
+	            <RelativeLayout
+	                android:id="@+id/adv_search_row5"
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+	                android:layout_below="@id/adv_search_row4">
+
+					<TextView
+		                android:id="@+id/ph_range_bar_label"
+		                android:layout_width="41dp"
+		                android:layout_height="wrap_content"
+		                android:layout_alignParentLeft="true"
+		                android:layout_centerVertical="true"
+		                android:layout_marginLeft="12dp"
+		                android:textColor="@color/white"
+		                android:text="@string/ph_range_bar_label"
+		                android:textSize="16sp"/>
+		            
+		            <CheckBox 
+		                android:id="@+id/ph_range_bar_cb"
+		                android:layout_width="wrap_content"
+		                android:layout_height="wrap_content"
+		                android:layout_alignParentRight="true"/>
+		            
+		            <TextView 
+		                android:id="@+id/ph_range_bar_min_text"
+		                android:layout_width="17dp"
+						android:gravity="right"
+		                android:layout_height="wrap_content"
+		                android:layout_toRightOf="@id/ph_range_bar_label"
+		                android:layout_marginLeft="3dp"
+		                android:layout_centerVertical="true"
+		                android:text="@string/ph_min"/>
+		            
+		            <TextView 
+		                android:id="@+id/ph_range_bar_max_text"
+		                android:layout_width="17dp"
+		                android:gravity="left"
+		                android:layout_height="wrap_content"
+		                android:layout_toLeftOf="@id/ph_range_bar_cb"
+		                android:layout_centerVertical="true"
+		                android:text="@string/ph_max"/>
+		            
+		            <org.frojoe.l5rSearch.widget.RangeSeekBar
+		                android:id="@+id/ph_range_bar"
+		                android:layout_width="match_parent"
+		                android:layout_height="wrap_content"
+		                android:layout_toRightOf="@id/ph_range_bar_min_text"
+		                android:layout_toLeftOf="@id/ph_range_bar_max_text"
+		                android:layout_centerVertical="true"
+		                rangeseekbar:min="@string/ph_min"
+		                rangeseekbar:max="@string/ph_max"/>
+		        
+		        </RelativeLayout>
+	            
+	            <RelativeLayout
+	                android:id="@+id/adv_search_row6"
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+	                android:layout_below="@id/adv_search_row5">
+
+					<TextView
+		                android:id="@+id/ps_range_bar_label"
+		                android:layout_width="41dp"
+		                android:layout_height="wrap_content"
+		                android:layout_alignParentLeft="true"
+		                android:layout_centerVertical="true"
+		                android:layout_marginLeft="12dp"
+		                android:textColor="@color/white"
+		                android:text="@string/ps_range_bar_label"
+		                android:textSize="16sp"/>
+		            
+		            <CheckBox 
+		                android:id="@+id/ps_range_bar_cb"
+		                android:layout_width="wrap_content"
+		                android:layout_height="wrap_content"
+		                android:layout_alignParentRight="true"/>
+		            
+		            <TextView 
+		                android:id="@+id/ps_range_bar_min_text"
+		                android:layout_width="17dp"
+						android:gravity="right"
+		                android:layout_height="wrap_content"
+		                android:layout_toRightOf="@id/ps_range_bar_label"
+		                android:layout_marginLeft="3dp"
+		                android:layout_centerVertical="true"
+		                android:text="@string/ps_min"/>
+		            
+		            <TextView 
+		                android:id="@+id/ps_range_bar_max_text"
+		                android:layout_width="17dp"
+		                android:gravity="left"
+		                android:layout_height="wrap_content"
+		                android:layout_toLeftOf="@id/ps_range_bar_cb"
+		                android:layout_centerVertical="true"
+		                android:text="@string/ps_max"/>
+		            
+		            <org.frojoe.l5rSearch.widget.RangeSeekBar
+		                android:id="@+id/ps_range_bar"
+		                android:layout_width="match_parent"
+		                android:layout_height="wrap_content"
+		                android:layout_toRightOf="@id/ps_range_bar_min_text"
+		                android:layout_toLeftOf="@id/ps_range_bar_max_text"
+		                android:layout_centerVertical="true"
+		                rangeseekbar:min="@string/ps_min"
+		                rangeseekbar:max="@string/ps_max"/>
+
+				</RelativeLayout>
+	            
+	            <RelativeLayout
+	                android:id="@+id/adv_search_row7"
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+	                android:layout_below="@id/adv_search_row6">
+
+					<TextView
+		                android:id="@+id/gp_range_bar_label"
+		                android:layout_width="41dp"
+		                android:layout_height="wrap_content"
+		                android:layout_alignParentLeft="true"
+		                android:layout_centerVertical="true"
+		                android:layout_marginLeft="12dp"
+		                android:textColor="@color/white"
+		                android:text="@string/gp_range_bar_label"
+		                android:textSize="16sp"/>
+		            
+		            <CheckBox 
+		                android:id="@+id/gp_range_bar_cb"
+		                android:layout_width="wrap_content"
+		                android:layout_height="wrap_content"
+		                android:layout_alignParentRight="true"/>
+		            
+		            <TextView 
+		                android:id="@+id/gp_range_bar_min_text"
+		                android:layout_width="17dp"
+						android:gravity="right"
+		                android:layout_height="wrap_content"
+		                android:layout_toRightOf="@id/gp_range_bar_label"
+		                android:layout_marginLeft="3dp"
+		                android:layout_centerVertical="true"
+		                android:text="@string/gp_min"/>
+		            
+		            <TextView 
+		                android:id="@+id/gp_range_bar_max_text"
+		                android:layout_width="17dp"
+		                android:gravity="left"
+		                android:layout_height="wrap_content"
+		                android:layout_toLeftOf="@id/gp_range_bar_cb"
+		                android:layout_centerVertical="true"
+		                android:text="@string/gp_max"/>
+		            
+		            <org.frojoe.l5rSearch.widget.RangeSeekBar
+		                android:id="@+id/gp_range_bar"
+		                android:layout_width="match_parent"
+		                android:layout_height="wrap_content"
+		                android:layout_toRightOf="@id/gp_range_bar_min_text"
+		                android:layout_toLeftOf="@id/gp_range_bar_max_text"
+		                android:layout_centerVertical="true"
+		                rangeseekbar:min="@string/gp_min"
+		                rangeseekbar:max="@string/gp_max"/>
+
+       		    </RelativeLayout>
+	            
+	            <RelativeLayout
+	                android:id="@+id/adv_search_row8"
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+	                android:layout_below="@id/adv_search_row7">
+
+					<TextView
+		                android:id="@+id/sfh_range_bar_label"
+		                android:layout_width="41dp"
+		                android:layout_height="wrap_content"
+		                android:layout_alignParentLeft="true"
+		                android:layout_centerVertical="true"
+		                android:layout_marginLeft="12dp"
+		                android:textColor="@color/white"
+		                android:text="@string/sfh_range_bar_label"
+		                android:textSize="16sp"/>
+		            
+		            <CheckBox 
+		                android:id="@+id/sfh_range_bar_cb"
+		                android:layout_width="wrap_content"
+		                android:layout_height="wrap_content"
+		                android:layout_alignParentRight="true"/>
+		            
+		            <TextView 
+		                android:id="@+id/sfh_range_bar_min_text"
+		                android:layout_width="17dp"
+						android:gravity="right"
+		                android:layout_height="wrap_content"
+		                android:layout_toRightOf="@id/sfh_range_bar_label"
+		                android:layout_marginLeft="3dp"
+		                android:layout_centerVertical="true"
+		                android:text="@string/sfh_min"/>
+		            
+		            <TextView 
+		                android:id="@+id/sfh_range_bar_max_text"
+		                android:layout_width="17dp"
+		                android:gravity="left"
+		                android:layout_height="wrap_content"
+		                android:layout_toLeftOf="@id/sfh_range_bar_cb"
+		                android:layout_centerVertical="true"
+		                android:text="@string/sfh_max"/>
+		            
+		            <org.frojoe.l5rSearch.widget.RangeSeekBar
+		                android:id="@+id/sfh_range_bar"
+		                android:layout_width="match_parent"
+		                android:layout_height="wrap_content"
+		                android:layout_toRightOf="@id/sfh_range_bar_min_text"
+		                android:layout_toLeftOf="@id/sfh_range_bar_max_text"
+		                android:layout_centerVertical="true"
+		                rangeseekbar:min="@string/sfh_min"
+		                rangeseekbar:max="@string/sfh_max"/>
+
+				</RelativeLayout>
+	            
+	            <RelativeLayout
+	                android:id="@+id/adv_search_row9"
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+	                android:layout_below="@id/adv_search_row8">
+
+					<TextView
+		                android:id="@+id/fv_range_bar_label"
+		                android:layout_width="41dp"
+		                android:layout_height="wrap_content"
+		                android:layout_alignParentLeft="true"
+		                android:layout_centerVertical="true"
+		                android:layout_marginLeft="12dp"
+		                android:textColor="@color/white"
+		                android:text="@string/fv_range_bar_label"
+		                android:textSize="16sp"/>
+		            
+		            <CheckBox 
+		                android:id="@+id/fv_range_bar_cb"
+		                android:layout_width="wrap_content"
+		                android:layout_height="wrap_content"
+		                android:layout_alignParentRight="true"/>
+		            
+		            <TextView 
+		                android:id="@+id/fv_range_bar_min_text"
+		                android:layout_width="17dp"
+		                android:gravity="right"
+		                android:layout_height="wrap_content"
+		                android:layout_toRightOf="@id/fv_range_bar_label"
+		                android:layout_marginLeft="3dp"
+		                android:layout_centerVertical="true"
+		                android:text="@string/fv_min"/>
+		            
+		            <TextView 
+		                android:id="@+id/fv_range_bar_max_text"
+		                android:layout_width="17dp"
+		                android:gravity="left"
+		                android:layout_height="wrap_content"
+		                android:layout_toLeftOf="@id/fv_range_bar_cb"
+		                android:layout_centerVertical="true"
+		                android:text="@string/fv_max"/>
+		            
+		            <org.frojoe.l5rSearch.widget.RangeSeekBar
+		                android:id="@+id/fv_range_bar"
+		                android:layout_width="match_parent"
+		                android:layout_height="wrap_content"
+		                android:layout_toRightOf="@id/fv_range_bar_min_text"
+		                android:layout_toLeftOf="@id/fv_range_bar_max_text"
+		                android:layout_centerVertical="true"
+		                rangeseekbar:min="@string/fv_min"
+		                rangeseekbar:max="@string/fv_max"/>
+				
+				</RelativeLayout>
+				
+	            <RelativeLayout
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+	                android:layout_below="@id/adv_search_row9">
+		                
+			        <EditText
+			            android:id="@+id/flavor_text_search"
+			            android:layout_width="match_parent"
+			            android:layout_height="wrap_content"
+			            android:hint="@string/flavor_text_hint"
+			            android:imeOptions="actionSearch"
+			            android:textSize="16sp"
+			            android:inputType="text"/>
+	            
+			        <EditText
+			            android:id="@+id/storyline_credit_search"
+			            android:layout_width="match_parent"
+			            android:layout_height="wrap_content"
+			            android:hint="@string/storyline_credit_hint"
+			            android:imeOptions="actionSearch"
+			            android:textSize="16sp"
+			            android:inputType="textNoSuggestions"
+			            android:layout_below="@id/flavor_text_search"/>
+			        
+			        <EditText
+			            android:id="@+id/artist_search"
+			            android:layout_width="match_parent"
+			            android:layout_height="wrap_content"
+			            android:hint="@string/artist_hint"
+			            android:imeOptions="actionSearch"
+			            android:textSize="16sp"
+			            android:inputType="textNoSuggestions"
+			            android:layout_below="@id/storyline_credit_search"/>
+	            
+	            	<EditText
+	            	    android:id="@+id/card_number_search"
+	            	    android:layout_width="match_parent"
+	            	    android:layout_height="wrap_content"
+	            	    android:hint="@string/card_number_hint"
+	            	    android:imeOptions="actionSearch"
+	            	    android:textSize="16sp"
+	            	    android:inputType="number"
+	            	    android:layout_below="@id/artist_search"/>
+	            	
+	            	<EditText
+	            	    android:id="@+id/legal_date_search"
+	            	    android:layout_width="match_parent"
+	            	    android:layout_height="wrap_content"
+	            	    android:hint="@string/legal_date_hint"
+	            	    android:imeOptions="actionSearch"
+	            	    android:textSize="16sp"
+	            	    android:inputType="textNoSuggestions"
+	            	    android:layout_below="@id/card_number_search"/>
+	            	
+	            	<Spinner
+			            android:id="@+id/deck_search"
+			            android:layout_width="match_parent"
+			            android:layout_height="wrap_content"
+			            android:entries="@array/decks"
+			            android:prompt="@string/deck_prompt"
+			            android:layout_below="@id/legal_date_search"/>
+	            	
+	            	<EditText
+	            	    android:id="@+id/notes_search"
+	            	    android:layout_width="match_parent"
+	            	    android:layout_height="wrap_content"
+	            	    android:hint="@string/notes_hint"
+	            	    android:imeOptions="actionSearch"
+	            	    android:textSize="16sp"
+	            	    android:inputType="textNoSuggestions"
+	            	    android:layout_below="@id/deck_search"/>
+	            
+	            </RelativeLayout>
+	                
+	        </RelativeLayout>
+	        
+        </LinearLayout>
+        
+    </ScrollView>
+    
+</LinearLayout>

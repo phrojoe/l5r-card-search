@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <declare-styleable name="RangeSeekBar">
+        <attr name="min" format="integer"/>
+        <attr name="max" format="integer"/>
+        <attr name="startingMin" format="integer"/>
+        <attr name="startingMax" format="integer"/>
+    </declare-styleable>
+    
+</resources>

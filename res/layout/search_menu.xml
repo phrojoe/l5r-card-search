@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+   
+   <item android:id="@+id/search_menu_adv_search"
+        android:title="@string/adv_search"
+        android:icon="@drawable/adv_search"
+        android:showAsAction="ifRoom|withText"/>
+    
+    <item android:id="@+id/search_menu_reset"
+        android:title="@string/button_reset"
+        android:icon="@drawable/reset"
+        android:showAsAction="ifRoom|withText"/>
+    
+    <item android:id="@+id/search_menu_mycards"         
+		android:title="@string/mycards"
+		android:icon="@drawable/my_cards"
+		android:showAsAction="ifRoom|withText"/>
+    
+</menu> 

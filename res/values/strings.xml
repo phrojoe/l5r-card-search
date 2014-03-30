@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <string name="app_name">Isawa Library</string>
+    <string name="search_hint">Card Name</string>
+    <string name="button_search">Search</string>
+    <string name="button_reset">Reset</string>
+    <string name="button_cancel">Cancel</string>
+    <string name="no_results">No cards found</string>
+    <string name="no_card_image">No card image was found</string>
+    <string name="card_holder">Card Image</string>
+    <string name="image">Image</string>
+    <string name="details">Details</string>
+    <string name="mycards">My Cards</string>
+    <string name="adv_search">Advanced</string>
+    <string name="results">Results</string>
+    <string name="save">Save</string>
+    <string name="delete">Delete</string>
+    <string name="share">Share</string>
+    <string name="share_to">Share link to&#8230;</string>
+    
+    <string name="keywords_hint">Keywords</string>
+    <string name="card_text_hint">Card Text</string>
+    <string name="flavor_text_hint">Flavor Text</string>
+    <string name="storyline_credit_hint">Storyline Credit</string>
+    <string name="artist_hint">Artist</string>
+    <string name="card_number_hint">Card Number</string>
+    <string name="legal_date_hint">Legal Date</string>
+    <string name="notes_hint">Notes</string>
+    
+    <string name="card_type_prompt">Card Type</string>
+    <string name="clan_prompt">Clan</string>
+    <string name="set_prompt">Set</string>
+    <string name="rarity_prompt">Rarity</string>
+    <string name="legality_prompt">Legality</string>
+    <string name="deck_prompt">Deck</string>
+    
+    <string name="errata_mrp_cb">Errata/MRP</string>
+    
+    <string name="force_range_bar_label">Force</string>
+    <string name="force_tooltip">Force</string>
+    <string name="force_min">0</string>
+    <string name="force_max">25</string>
+    
+    <string name="chi_range_bar_label">Chi</string>
+    <string name="chi_tooltip">Chi</string>
+    <string name="chi_min">-3</string>
+    <string name="chi_max">20</string>
+    
+    <string name="hr_range_bar_label">HR</string>
+    <string name="hr_tooltip">Honor Requirement</string>
+    <string name="hr_min">0</string>
+    <string name="hr_max">25</string>
+    
+    <string name="gc_range_bar_label">GC</string>
+    <string name="gc_tooltip">Gold Cost</string>
+    <string name="gc_min">0</string>
+    <string name="gc_max">25</string>
+    
+    <string name="ph_range_bar_label">PH</string>
+    <string name="ph_tooltip">Personal Honor</string>
+    <string name="ph_min">0</string>
+    <string name="ph_max">10</string>
+    
+    <string name="ps_range_bar_label">PS</string>
+    <string name="ps_tooltip">Province Strength</string>
+    <string name="ps_min">-3</string>
+    <string name="ps_max">10</string>
+    
+    <string name="gp_range_bar_label">GP</string>
+    <string name="gp_tooltip">Gold Production</string>
+    <string name="gp_min">-2</string>
+    <string name="gp_max">5</string>
+    
+    <string name="sfh_range_bar_label">SFH</string>
+    <string name="sfh_tooltip">Starting Family Honor</string>
+    <string name="sfh_min">-4</string>
+    <string name="sfh_max">20</string>
+    
+    <string name="fv_range_bar_label">FV</string>
+    <string name="fv_tooltip">Focus Value</string>
+    <string name="fv_min">0</string>
+    <string name="fv_max">5</string>
+    
+    <string-array name="card_types">
+		<item>Card Type</item>
+		<item>Ancestor</item>
+		<item>Celestial</item>
+		<item>Event</item>
+		<item>Follower</item>
+		<item>Holding</item>
+		<item>Item</item>
+		<item>Other</item>
+		<item>Personality</item>
+		<item>Proxy</item>
+		<item>Region</item>
+		<item>Ring</item>
+		<item>Sensei</item>
+		<item>Spell</item>
+		<item>Strategy</item>
+		<item>Stronghold</item>
+		<item>Wind</item>
+    </string-array>
+    <string-array name="clans">
+        <item>Clan</item>
+        <item>Brotherhood of Shinsei</item>
+		<item>Crab</item>
+		<item>Crane</item>
+		<item>Dragon</item>
+		<item>Lion</item>
+		<item>Mantis</item>
+		<item>Naga</item>
+		<item>Ninja</item>
+		<item>Phoenix</item>
+		<item>Ratling</item>
+		<item>Scorpion</item>
+		<item>Shadowlands</item>
+		<item>Spider</item>
+		<item>Spirit</item>
+		<item>Toturi\'s Army</item>
+		<item>Unaligned</item>
+		<item>Unicorn</item>
+    </string-array>
+    <string-array name="sets">
+        <item>Set</item>
+        <item>1,000 Years of Darkness</item>
+		<item>A Perfect Cut</item>
+        <item>Aftermath</item>
+		<item>Ambition\'s Debt</item>
+		<item>An Oni\'s Fury</item>
+		<item>Anvil of Despair</item>
+		<item>Battle of Beiden Pass</item>
+		<item>Battle of Kyuden Tonbo</item>
+		<item>Before the Dawn</item>
+		<item>Broken Blades</item>
+		<item>Celestial Edition</item>
+		<item>Celestial Edition 15th Anniversary</item>
+		<item>Code of Bushido</item>
+		<item>Coils of Madness</item>
+		<item>Crab vs. Lion</item>
+		<item>Crimson and Jade</item>
+		<item>Dark Allies</item>
+		<item>Dawn of the Empire</item>
+		<item>Death at Koten</item>
+		<item>Diamond Edition</item>
+		<item>Drums of War</item>
+		<item>Embers of War</item>
+		<item>Emerald Edition</item>
+		<item>Emperor Edition</item>
+		<item>Emperor Edition Gempukku</item>
+		<item>Empire at War</item>
+		<item>Enemy of My Enemy</item>
+		<item>Fire and Shadow</item>
+		<item>Forbidden Knowledge</item>
+		<item>Forgotten Legacy</item>
+        <item>Gates of Chaos</item>
+		<item>Glory of the Empire</item>
+		<item>Gold Edition</item>
+		<item>Heaven and Earth</item>
+		<item>Heroes of Rokugan</item>
+		<item>Hidden City</item>
+		<item>Hidden Emperor 1</item>
+		<item>Hidden Emperor 2</item>
+		<item>Hidden Emperor 3</item>
+		<item>Hidden Emperor 4</item>
+		<item>Hidden Emperor 5</item>
+		<item>Hidden Emperor 6</item>
+		<item>Honor and Treachery</item>
+		<item>Honor Bound</item>
+		<item>Honor\'s Veil</item>
+		<item>Imperial Edition</item>
+        <item>Ivory Edition</item>
+		<item>Jade Edition</item>
+		<item>Khan\'s Defiance</item>
+		<item>L5R Experience</item>
+		<item>Lotus Edition</item>
+		<item>Obsidian Edition</item>
+		<item>Oracle of the Void</item>
+		<item>Path of Hope</item>
+		<item>Path of the Destroyer</item>
+		<item>Pearl Edition</item>
+		<item>Pre-Imperial Edition</item>
+		<item>Reign of Blood</item>
+		<item>Rise of the Shogun</item>
+		<item>Samurai Edition</item>
+		<item>Samurai Edition Banzai</item>
+		<item>Scorpion Clan Coup 1</item>
+		<item>Scorpion Clan Coup 2</item>
+		<item>Scorpion Clan Coup 3</item>
+		<item>Second City</item>
+		<item>Seeds of Decay</item>
+		<item>Shadowlands</item>
+		<item>Siege of Sleeping Mountain</item>
+		<item>Soul of the Empire</item>
+		<item>Storms Over Matsu Palace</item>
+		<item>Stronger Than Steel</item>
+		<item>Test of Enlightenment</item>
+		<item>Test of the Emerald and Jade Championships</item>
+		<item>The Dark Journey Home</item>
+		<item>The Dead of Winter</item>
+		<item>The Fall of Otosan Uchi</item>
+		<item>The Harbinger</item>
+		<item>The Heaven\'s Will</item>
+		<item>The Imperial Gift 1</item>
+		<item>The Imperial Gift 2</item>
+		<item>The Imperial Gift 3</item>
+		<item>The Plague War</item>
+		<item>The Shadow\'s Embrace</item>
+		<item>The Truest Test</item>
+		<item>The War of Spirits</item>
+		<item>Time of the Void</item>
+		<item>Tomorrow</item>
+		<item>Top Deck Booster Pack</item>
+		<item>Torn Asunder</item>
+		<item>Training Grounds</item>
+		<item>Training Grounds 2</item>
+		<item>War of Honor</item>
+		<item>Web of Lies</item>
+		<item>Winds of Change</item>
+		<item>Words and Deeds</item>
+		<item>Wrath of the Emperor</item>
+		<item>Promotional–Celestial</item>
+		<item>Promotional–CWF</item>
+		<item>Promotional–Diamond</item>
+		<item>Promotional–Emperor</item>
+		<item>Promotional–Gold</item>
+		<item>Promotional–Imperial</item>
+		<item>Promotional–Jade</item>
+		<item>Promotional–Lotus</item>
+		<item>Promotional–Samurai</item>
+    </string-array>
+    <string-array name="rarities">
+        <item>Rarity</item>
+        <item>Common</item>
+		<item>Fixed</item>
+		<item>None</item>
+		<item>Premium</item>
+		<item>Promo</item>
+		<item>Rare</item>
+		<item>Uncommon</item>
+    </string-array>
+    <string-array name="legalities">
+        <item>Legality</item>
+        <item>Age of Conquest (Emperor)</item>
+		<item>Ivory Edition</item>
+        <item>Ivory Edition Part 2</item>
+		<item>Destroyer War (Celestial)</item>
+		<item>Race for the Throne (Samurai)</item>
+		<item>Age of Enlightenment (Lotus)</item>
+		<item>Rain of Blood (Diamond)</item>
+		<item>Four Winds (Gold)</item>
+		<item>Hidden Emperor (Jade)</item>
+		<item>Clan Wars (Imperial)</item>
+		<item>Not Legal (Proxy)</item>
+    </string-array>
+    <string-array name="decks">
+        <item>Deck</item>
+        <item>Proxy</item>
+        <item>Pre-Game</item>
+        <item>Dynasty</item>
+        <item>Fate</item>
+        <item>Other</item>
+    </string-array>
+    
+</resources>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+   
+    <item android:id="@+id/card_menu_image"         
+		android:title="@string/image"
+		android:icon="@drawable/card_image"
+        android:showAsAction="ifRoom|withText"/>
+    
+    <item android:id="@+id/card_menu_save"
+        android:title="@string/save"
+        android:icon="@drawable/card_save"
+        android:showAsAction="ifRoom|withText"/>
+    
+    <item android:id="@+id/share_card"
+        android:title="@string/share"
+        android:actionProviderClass="android.widget.ShareActionProvider"
+        android:showAsAction="ifRoom|withText"/>
+    
+</menu> 
