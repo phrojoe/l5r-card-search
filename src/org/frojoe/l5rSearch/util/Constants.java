@@ -369,6 +369,7 @@ public class Constants {
 		SPINNER_VALUE_MAP.put("Stronger Than Steel","Stronger Than Steel");
 		SPINNER_VALUE_MAP.put("Test of Enlightenment","Test of Enlightenment");
 		SPINNER_VALUE_MAP.put("Test of the Emerald and Jade Championships","Test of the Emerald and Jade Championships");
+        SPINNER_VALUE_MAP.put("The Coming Storm", "The Coming Storm");
 		SPINNER_VALUE_MAP.put("The Dark Journey Home","The Dark Journey Home");
 		SPINNER_VALUE_MAP.put("The Dead of Winter","The Dead of Winter");
 		SPINNER_VALUE_MAP.put("The Fall of Otosan Uchi","The Fall of Otosan Uchi");
