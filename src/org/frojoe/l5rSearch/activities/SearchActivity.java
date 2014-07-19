@@ -259,9 +259,8 @@ public class SearchActivity extends Activity {
         	query.processEditTexts(
         			getEditTexts(Constants.ADV_SEARCH_EDIT_TEXTS));
     		query.processSpinners(getSpinners(Constants.ADV_SEARCH_SPINNERS));
-    		
-    		CheckBox errataCb = (CheckBox) findViewById(R.id.errata_mrp_cb);
-    		query.processErrataCb(errataCb);
+
+            query.processCheckboxes(getCheckboxes(Constants.ADV_SEARCH_CBS));
     	}
     	
     	return query.getParamsAsArray();
@@ -292,7 +291,14 @@ public class SearchActivity extends Activity {
     		spinners[i] = (Spinner) findViewById(ids[i]);
     	return spinners;
     }
-   
+
+    private CheckBox[] getCheckboxes(int[] ids) {
+        CheckBox[] checkBoxes = new CheckBox[ids.length];
+        for (int i = 0; i < ids.length; i++)
+            checkBoxes[i] = (CheckBox) findViewById(ids[i]);
+        return checkBoxes;
+    }
+
     private void populateListView(ArrayList<Card> cards) {
     	Intent intent =  new Intent(this, ResultsActivity.class);
 		intent.putParcelableArrayListExtra(Constants.INTENT_CARDS, cards);

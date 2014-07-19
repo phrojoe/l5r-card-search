@@ -40,6 +40,14 @@ public class Query {
 				params.add(new BasicNameValuePair(name, ""));
 		}
 	}
+
+    public void processCheckboxes(CheckBox... checkBoxes) {
+        for (CheckBox cb : checkBoxes) {
+            String name = getSingleParamName(cb);
+            if (cb.isChecked())
+                params.add(new BasicNameValuePair(name, "1"));
+        }
+    }
 	
 	//each seek bar is grouped with their checkbox
 	public void processIntegerSeekBarGroups(
@@ -55,12 +63,6 @@ public class Query {
 				params.add(new BasicNameValuePair(names[0], low.toString()));
 				params.add(new BasicNameValuePair(names[1], high.toString()));
 			}
-		}
-	}
-	
-	public void processErrataCb(CheckBox errataCb) {
-		if (errataCb.isChecked()) {
-			params.add(new BasicNameValuePair(Constants.ERRATA,"1"));
 		}
 	}
 	

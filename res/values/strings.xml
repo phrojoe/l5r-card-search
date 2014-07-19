@@ -27,6 +27,7 @@
     <string name="card_number_hint">Card Number</string>
     <string name="legal_date_hint">Legal Date</string>
     <string name="notes_hint">Notes</string>
+    <string name="spec_notes_hint">Specfic Notes</string>
     
     <string name="card_type_prompt">Card Type</string>
     <string name="clan_prompt">Clan</string>
@@ -35,8 +36,10 @@
     <string name="legality_prompt">Legality</string>
     <string name="deck_prompt">Deck</string>
     
-    <string name="errata_mrp_cb">Errata/MRP</string>
-    
+    <string name="errata_cb">Erratum</string>
+    <string name="mrp_cb">MRP</string>
+    <string name="banned_cb">Banned</string>
+
     <string name="force_range_bar_label">Force</string>
     <string name="force_tooltip">Force</string>
     <string name="force_min">0</string>
@@ -124,6 +127,8 @@
     <string-array name="sets">
         <item>Set</item>
         <item>1,000 Years of Darkness</item>
+        <item>A Line in the Sand</item>
+        <item>A Matter of Honor</item>
 		<item>A Perfect Cut</item>
         <item>Aftermath</item>
 		<item>Ambition\'s Debt</item>
@@ -147,6 +152,7 @@
 		<item>Embers of War</item>
 		<item>Emerald Edition</item>
 		<item>Emperor Edition</item>
+        <item>Emperor Edition Demo Decks</item>
 		<item>Emperor Edition Gempukku</item>
 		<item>Empire at War</item>
 		<item>Enemy of My Enemy</item>
@@ -256,7 +262,6 @@
     </string-array>
     <string-array name="decks">
         <item>Deck</item>
-        <item>Proxy</item>
         <item>Pre-Game</item>
         <item>Dynasty</item>
         <item>Fate</item>

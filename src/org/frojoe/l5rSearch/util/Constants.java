@@ -12,15 +12,9 @@ public class Constants {
                            , SWIPE_MIN_DISTANCE = 40
                            , SWIPE_THRESHOLD_VELOCITY = 60;
 
-	public static final int 
-		MIN_BYTES = 314573 				//minimum bytes for card image
-		, SEARCH_PARAMS_TOTAL = 34
-		;
-	
-	public static final String
-		APP_NAME = "L5RCardSearch"
-		, APP_DISPLAY_NAME = "L5R Card Search"
-		;
+	public static final int MIN_BYTES = 314573; //minimum bytes for card image
+
+	public static final String APP_NAME = "L5RCardSearch";
 
     /*
      * Intent names
@@ -37,9 +31,8 @@ public class Constants {
 	/*
 	 * Oracle Base URL
 	 */
-	public static final String
-		BASE_URL = "http://imperialassembly.com/oracle/";
-	
+	public static final String BASE_URL = "http://imperialassembly.com/oracle/";
+
 	/*
 	 * Oracle POST URLs
 	 */
@@ -47,12 +40,11 @@ public class Constants {
 		DO_SEARCH_URL = BASE_URL + "dosearch"
 		, DO_CARD_URL = BASE_URL + "docard"
 		;
-	
+
 	/*
 	 * Oracle GET URls
 	 */
-	public static final String
-		SHOW_IMAGE_URL = BASE_URL + "showimage";
+	public static final String SHOW_IMAGE_URL = BASE_URL + "showimage";
 
 	/*
 	 * Oracle Search Params
@@ -88,17 +80,20 @@ public class Constants {
 	    , STORYLINE_CREDIT = "search_32"
 	    , ARTIST = "search_17"
 	    , ERRATA = "search_t_11"
+        , BANNED = "search_t_65"
+        , MRP = "search_t_66"
 	    , CARD_NUMBER = "search_26"
 	    , LEGAL_DATE = "search_62"
 	    , DECK = "search_sel_60[]"
-	    , NOTES = "search_37"
+	    , NOTES = "search_36"
+        , SPEC_NOTES = "search_37"
 		, PAGE_NUMBER = "page"
 		;
-	
+
 	/*
 	 * View to search param map
 	 */
-	public static final Map<Integer,String> VIEW_PARAM_MAP = 
+	public static final Map<Integer,String> VIEW_PARAM_MAP =
 			new HashMap<Integer,String>();
 	static {
 		VIEW_PARAM_MAP.put(R.id.card_search, CARD_NAME);
@@ -116,9 +111,12 @@ public class Constants {
 		VIEW_PARAM_MAP.put(R.id.legal_date_search, LEGAL_DATE);
 		VIEW_PARAM_MAP.put(R.id.deck_search, DECK);
 		VIEW_PARAM_MAP.put(R.id.notes_search, NOTES);
-		VIEW_PARAM_MAP.put(R.id.errata_mrp_cb, ERRATA);
+        VIEW_PARAM_MAP.put(R.id.spec_notes_search, SPEC_NOTES);
+		VIEW_PARAM_MAP.put(R.id.errata_cb, ERRATA);
+        VIEW_PARAM_MAP.put(R.id.mrp_cb, MRP);
+        VIEW_PARAM_MAP.put(R.id.banned_cb, BANNED);
 	}
-	
+
 	/*
 	 * Basic EditTexts
 	 */
@@ -127,7 +125,7 @@ public class Constants {
 		, R.id.keywords_search
 		, R.id.card_text_search
 	};
-	
+
 	/*
 	 * Advanced EditTexts
 	 */
@@ -138,8 +136,9 @@ public class Constants {
 		, R.id.card_number_search
 		, R.id.legal_date_search
 		, R.id.notes_search
+        , R.id.spec_notes_search
 	};
-	
+
 	/*
 	 * Basic Spinners
 	 */
@@ -150,84 +149,93 @@ public class Constants {
 		, R.id.rarity_search
 		, R.id.legality_search
 	};
-	
+
+    /*
+     * Checkboxes
+     */
+    public static final int[] ADV_SEARCH_CBS = new int[] {
+        R.id.errata_cb
+        , R.id.mrp_cb
+        , R.id.banned_cb
+    };
+
 	/*
 	 * Adv Spinners
 	 */
 	public static final int[] ADV_SEARCH_SPINNERS = new int[] {
 		R.id.deck_search
 	};
-	
-	public static final Map<Integer,String[]> VIEW_MULTI_PARAM_MAP = 
+
+	public static final Map<Integer,String[]> VIEW_MULTI_PARAM_MAP =
 			new HashMap<Integer,String[]>();
 	static {
-		VIEW_MULTI_PARAM_MAP.put(R.id.force_range_bar, 
+		VIEW_MULTI_PARAM_MAP.put(R.id.force_range_bar,
 				new String[]{FORCE_LOW, FORCE_HIGH});
-		VIEW_MULTI_PARAM_MAP.put(R.id.chi_range_bar, 
+		VIEW_MULTI_PARAM_MAP.put(R.id.chi_range_bar,
 				new String[]{CHI_LOW, CHI_HIGH});
-		VIEW_MULTI_PARAM_MAP.put(R.id.hr_range_bar, 
+		VIEW_MULTI_PARAM_MAP.put(R.id.hr_range_bar,
 				new String[]{HR_LOW, HR_HIGH});
-		VIEW_MULTI_PARAM_MAP.put(R.id.gc_range_bar, 
+		VIEW_MULTI_PARAM_MAP.put(R.id.gc_range_bar,
 				new String[]{GC_LOW, GC_HIGH});
-		VIEW_MULTI_PARAM_MAP.put(R.id.ph_range_bar, 
+		VIEW_MULTI_PARAM_MAP.put(R.id.ph_range_bar,
 				new String[]{PH_LOW, PH_HIGH});
-		VIEW_MULTI_PARAM_MAP.put(R.id.ps_range_bar, 
+		VIEW_MULTI_PARAM_MAP.put(R.id.ps_range_bar,
 				new String[]{PS_LOW, PS_HIGH});
-		VIEW_MULTI_PARAM_MAP.put(R.id.gp_range_bar, 
+		VIEW_MULTI_PARAM_MAP.put(R.id.gp_range_bar,
 				new String[]{GP_LOW, GP_HIGH});
-		VIEW_MULTI_PARAM_MAP.put(R.id.sfh_range_bar, 
+		VIEW_MULTI_PARAM_MAP.put(R.id.sfh_range_bar,
 				new String[]{SFH_LOW, SFH_HIGH});
-		VIEW_MULTI_PARAM_MAP.put(R.id.fv_range_bar, 
+		VIEW_MULTI_PARAM_MAP.put(R.id.fv_range_bar,
 				new String[]{FV_LOW, FV_HIGH});
 	}
-	
+
 	/*
 	 * RangeSeekBar to CheckBox maps
 	 */
 	public static final int CB_IDX = 0;
 	public static final int MIN_IDX = 1;
 	public static final int MAX_IDX = 2;
-	public static final Map<Integer,Integer[]> SEEKBAR_GROUP_MAP = 
+	public static final Map<Integer,Integer[]> SEEKBAR_GROUP_MAP =
 			new HashMap<Integer,Integer[]>();
 	static {
-		SEEKBAR_GROUP_MAP.put(R.id.force_range_bar, 
+		SEEKBAR_GROUP_MAP.put(R.id.force_range_bar,
 				new Integer[] { R.id.force_range_bar_cb,
 							R.id.force_range_bar_min_text,
 							R.id.force_range_bar_max_text});
-		SEEKBAR_GROUP_MAP.put(R.id.chi_range_bar, 
+		SEEKBAR_GROUP_MAP.put(R.id.chi_range_bar,
 				new Integer[] { R.id.chi_range_bar_cb,
 							R.id.chi_range_bar_min_text,
 							R.id.chi_range_bar_max_text});
-		SEEKBAR_GROUP_MAP.put(R.id.hr_range_bar, 
+		SEEKBAR_GROUP_MAP.put(R.id.hr_range_bar,
 				new Integer[] { R.id.hr_range_bar_cb,
 							R.id.hr_range_bar_min_text,
 							R.id.hr_range_bar_max_text});
-		SEEKBAR_GROUP_MAP.put(R.id.gc_range_bar, 
+		SEEKBAR_GROUP_MAP.put(R.id.gc_range_bar,
 				new Integer[] { R.id.gc_range_bar_cb,
 							R.id.gc_range_bar_min_text,
 							R.id.gc_range_bar_max_text});
-		SEEKBAR_GROUP_MAP.put(R.id.ph_range_bar, 
+		SEEKBAR_GROUP_MAP.put(R.id.ph_range_bar,
 				new Integer[] { R.id.ph_range_bar_cb,
 							R.id.ph_range_bar_min_text,
 							R.id.ph_range_bar_max_text});
-		SEEKBAR_GROUP_MAP.put(R.id.ps_range_bar, 
+		SEEKBAR_GROUP_MAP.put(R.id.ps_range_bar,
 				new Integer[] { R.id.ps_range_bar_cb,
 							R.id.ps_range_bar_min_text,
 							R.id.ps_range_bar_max_text});
-		SEEKBAR_GROUP_MAP.put(R.id.gp_range_bar, 
+		SEEKBAR_GROUP_MAP.put(R.id.gp_range_bar,
 				new Integer[] { R.id.gp_range_bar_cb,
 							R.id.gp_range_bar_min_text,
 							R.id.gp_range_bar_max_text});
-		SEEKBAR_GROUP_MAP.put(R.id.sfh_range_bar, 
+		SEEKBAR_GROUP_MAP.put(R.id.sfh_range_bar,
 				new Integer[] { R.id.sfh_range_bar_cb,
 							R.id.sfh_range_bar_min_text,
 							R.id.sfh_range_bar_max_text});
-		SEEKBAR_GROUP_MAP.put(R.id.fv_range_bar, 
+		SEEKBAR_GROUP_MAP.put(R.id.fv_range_bar,
 				new Integer[] { R.id.fv_range_bar_cb,
 							R.id.fv_range_bar_min_text,
 							R.id.fv_range_bar_max_text});
 	}
-	
+
 	/*
 	 * Default selections for search spinners
 	 */
@@ -239,11 +247,11 @@ public class Constants {
 		, LEGALITY_DEFAULT = "Legality"
 		, DECK_DEFAULT = "Deck"
 		;
-	
+
 	/*
 	 * Spinner to default map
 	 */
-	public static final Map<Integer,String> SPINNER_DEFAULT_MAP = 
+	public static final Map<Integer,String> SPINNER_DEFAULT_MAP =
 			new HashMap<Integer,String>();
 	static {
 		SPINNER_DEFAULT_MAP.put(R.id.card_type_search, CARD_TYPE_DEFAULT);
@@ -253,11 +261,11 @@ public class Constants {
 		SPINNER_DEFAULT_MAP.put(R.id.legality_search, LEGALITY_DEFAULT);
 		SPINNER_DEFAULT_MAP.put(R.id.deck_search, DECK_DEFAULT);
 	}
-	
+
 	/*
 	 * Spinner value map
 	 */
-	public static final Map<String,String> SPINNER_VALUE_MAP = 
+	public static final Map<String,String> SPINNER_VALUE_MAP =
 			new HashMap<String,String>();
 	static {
 		SPINNER_VALUE_MAP.put("Card Type","Card Type");
@@ -297,6 +305,8 @@ public class Constants {
 		SPINNER_VALUE_MAP.put("Unicorn","Unicorn");
 		SPINNER_VALUE_MAP.put("Set","Set");
 		SPINNER_VALUE_MAP.put("1,000 Years of Darkness","1,000 Years of Darkness");
+        SPINNER_VALUE_MAP.put("A Line in the Sand", "A Line in the Sand");
+        SPINNER_VALUE_MAP.put("A Matter of Honor", "A Matter of Honor");
 		SPINNER_VALUE_MAP.put("A Perfect Cut","A Perfect Cut");
         SPINNER_VALUE_MAP.put("Aftermath","Aftermath");
 		SPINNER_VALUE_MAP.put("Ambition\'s Debt","Ambition\'s Debt");
@@ -320,6 +330,7 @@ public class Constants {
 		SPINNER_VALUE_MAP.put("Embers of War","Embers of War");
 		SPINNER_VALUE_MAP.put("Emerald Edition","Emerald Edition");
 		SPINNER_VALUE_MAP.put("Emperor Edition","Emperor Edition");
+        SPINNER_VALUE_MAP.put("Emperor Edition Demo Decks", "Emperor Edition Demo Decks");
 		SPINNER_VALUE_MAP.put("Emperor Edition Gempukku","Emperor Edition Gempukku");
 		SPINNER_VALUE_MAP.put("Empire at War","Empire at War");
 		SPINNER_VALUE_MAP.put("Enemy of My Enemy","Enemy of My Enemy");
@@ -423,13 +434,12 @@ public class Constants {
 		SPINNER_VALUE_MAP.put("Clan Wars (Imperial)","Clan&nbsp;Wars&nbsp;(Imperial)");
 		SPINNER_VALUE_MAP.put("Not Legal (Proxy)","Not&nbsp;Legal&nbsp;(Proxy)");
 		SPINNER_VALUE_MAP.put("Deck","Deck");
-		SPINNER_VALUE_MAP.put("Proxy","Proxy");
 		SPINNER_VALUE_MAP.put("Pre-Game","Pre-Game");
 		SPINNER_VALUE_MAP.put("Dynasty","Dynasty");
 		SPINNER_VALUE_MAP.put("Fate","Fate");
 		SPINNER_VALUE_MAP.put("Other","Other");
 	}
-	
+
 	/*
 	 * Oracle HTML Items
 	 */
@@ -449,13 +459,13 @@ public class Constants {
 		, FOCUS = "smfo"
 		, MATCHES = "listingmatches"
 		;
-	
+
 	/*
 	 * Array of TextView ids with tooltips
 	 */
 	public static final Map<Integer,Integer> TEXT_VIEW_TOOLTIPS_MAP =
 			new HashMap<Integer,Integer>();
-			static{ 
+			static{
 				TEXT_VIEW_TOOLTIPS_MAP.put(
 						R.id.force_range_bar_label,R.string.force_tooltip);
 				TEXT_VIEW_TOOLTIPS_MAP.put(
@@ -475,7 +485,7 @@ public class Constants {
 				TEXT_VIEW_TOOLTIPS_MAP.put(
 						R.id.fv_range_bar_label,R.string.fv_tooltip);
 			}
-	
+
 	/*
 	 * Advanced search ranges
 	 */
@@ -487,11 +497,11 @@ public class Constants {
 		, HR_MIN = 0
 		, HR_MAX = 25
 		;
-	
+
 	/*
 	 * new font indicators
 	 */
-	public static final String 
+	public static final String
 		L5R_FONT_START = "l5rfontstart"
 		, L5R_FONT_END = "l5rfontend"
 		, GOLD_ICON_START = "goldIconStart"
@@ -501,7 +511,7 @@ public class Constants {
 	public static final String[] SPAN_INDICATORS = {
 		L5R_FONT_START, L5R_FONT_END, GOLD_ICON_START, GOLD_ICON_END
 	};
-	
+
 	/*
 	 * Card data order
 	 * NOT USED yet...
