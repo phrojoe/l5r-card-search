@@ -124,6 +124,8 @@
     <string-array name="sets">
         <item>Set</item>
         <item>1,000 Years of Darkness</item>
+        <item>A Line in the Sand</item>
+        <item>A Matter of Honor</item>
 		<item>A Perfect Cut</item>
         <item>Aftermath</item>
 		<item>Ambition\'s Debt</item>
@@ -147,6 +149,7 @@
 		<item>Embers of War</item>
 		<item>Emerald Edition</item>
 		<item>Emperor Edition</item>
+        <item>Emperor Edition Demo Decks</item>
 		<item>Emperor Edition Gempukku</item>
 		<item>Empire at War</item>
 		<item>Enemy of My Enemy</item>

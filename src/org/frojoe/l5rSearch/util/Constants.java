@@ -297,6 +297,8 @@ public class Constants {
 		SPINNER_VALUE_MAP.put("Unicorn","Unicorn");
 		SPINNER_VALUE_MAP.put("Set","Set");
 		SPINNER_VALUE_MAP.put("1,000 Years of Darkness","1,000 Years of Darkness");
+        SPINNER_VALUE_MAP.put("A Line in the Sand", "A Line in the Sand");
+        SPINNER_VALUE_MAP.put("A Matter of Honor", "A Matter of Honor");
 		SPINNER_VALUE_MAP.put("A Perfect Cut","A Perfect Cut");
         SPINNER_VALUE_MAP.put("Aftermath","Aftermath");
 		SPINNER_VALUE_MAP.put("Ambition\'s Debt","Ambition\'s Debt");
@@ -320,6 +322,7 @@ public class Constants {
 		SPINNER_VALUE_MAP.put("Embers of War","Embers of War");
 		SPINNER_VALUE_MAP.put("Emerald Edition","Emerald Edition");
 		SPINNER_VALUE_MAP.put("Emperor Edition","Emperor Edition");
+        SPINNER_VALUE_MAP.put("Emperor Edition Demo Decks", "Emperor Edition Demo Decks");
 		SPINNER_VALUE_MAP.put("Emperor Edition Gempukku","Emperor Edition Gempukku");
 		SPINNER_VALUE_MAP.put("Empire at War","Empire at War");
 		SPINNER_VALUE_MAP.put("Enemy of My Enemy","Enemy of My Enemy");
