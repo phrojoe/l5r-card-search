@@ -28,6 +28,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 
+@SuppressWarnings("ResourceType")
 public class CardImageActivity extends Activity implements View.OnClickListener {
 	
     ArrayList<Card> cards;
@@ -89,7 +90,7 @@ public class CardImageActivity extends Activity implements View.OnClickListener 
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
 			case android.R.id.home:
-				onBackPressed();
+				finish();
 				return true;
             case R.id.card_menu_details:
                 loadDetails();
@@ -99,11 +100,6 @@ public class CardImageActivity extends Activity implements View.OnClickListener 
 		}
 	}
 
-    @Override
-    public void onBackPressed() {
-        loadDetails();
-    }
-	
 	@SuppressLint("NewApi")
 	private void addHomeButton() {
 		ActionBar actionBar = getActionBar();
@@ -133,7 +129,7 @@ public class CardImageActivity extends Activity implements View.OnClickListener 
         pos += offset;
         try {
             if (cards != null && !cards.isEmpty() && pos < cards.size() && pos >= 0) {
-                Card card = cards.get(pos);
+                card = cards.get(pos);
                 if (card.getData().isEmpty())
                     new ConsultTheOracleTask().execute(card);
                 else {
@@ -151,19 +147,16 @@ public class CardImageActivity extends Activity implements View.OnClickListener 
     }
 
     private void loadDetails() {
-        if (!urlLaunch) {
-            Intent intent = new Intent(this, CardActivity.class);
-            intent.putParcelableArrayListExtra(Constants.INTENT_CARDS, cards);
-            intent.putExtra(Constants.INTENT_POS, pos);
-            if (card != null) {
-                intent.putExtra(Constants.INTENT_CARD, card);
-                startActivity(intent);
-            } else if (cards != null) {
-                intent.putExtra(Constants.INTENT_CARD, cards.get(pos));
-                startActivity(intent);
-            }
+        Intent intent = new Intent(this, CardActivity.class);
+        intent.putParcelableArrayListExtra(Constants.INTENT_CARDS, cards);
+        intent.putExtra(Constants.INTENT_POS, pos);
+        if (card != null) {
+            intent.putExtra(Constants.INTENT_CARD, card);
+        } else if (cards != null) {
+            intent.putExtra(Constants.INTENT_CARD, cards.get(pos));
         }
-        super.onBackPressed();
+        startActivity(intent);
+        finish();
     }
 
     @Override

@@ -40,6 +40,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TextView.OnEditorActionListener;
 
+@SuppressWarnings("ResourceType")
 public class SearchActivity extends Activity {
 	
 	Toaster toaster;
@@ -119,8 +120,7 @@ public class SearchActivity extends Activity {
     	for (Entry<Integer, Integer[]> entry : 
     			Constants.SEEKBAR_GROUP_MAP.entrySet()) {
     		
-    		RangeSeekBar<Integer> rsb = (RangeSeekBar) 
-    				findViewById(entry.getKey());
+    		RangeSeekBar<Integer> rsb = (RangeSeekBar) findViewById(entry.getKey());
     		final CheckBox cb = (CheckBox) 
     				findViewById(entry.getValue()[Constants.CB_IDX]);
     		final TextView min = (TextView)
@@ -150,7 +150,7 @@ public class SearchActivity extends Activity {
     	inflater.inflate(R.layout.search_menu, menu);
         return true;
     }
-    
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
     	switch (item.getItemId()) {
@@ -197,8 +197,7 @@ public class SearchActivity extends Activity {
     			((CheckBox)view).setChecked(false);
     	}
     	for (Integer key : Constants.VIEW_MULTI_PARAM_MAP.keySet()) {
-    		RangeSeekBar<Integer> rsb = 
-    				(RangeSeekBar<Integer>) findViewById(key);
+    		RangeSeekBar<Integer> rsb = (RangeSeekBar<Integer>) findViewById(key);
     		rsb.setSelectedMinValue(rsb.getAbsoluteMinValue());
     		rsb.setSelectedMaxValue(rsb.getAbsoluteMaxValue());
     		int cbId = Constants.SEEKBAR_GROUP_MAP

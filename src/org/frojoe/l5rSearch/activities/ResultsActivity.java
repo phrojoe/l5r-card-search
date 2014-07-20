@@ -75,31 +75,14 @@ public class ResultsActivity extends Activity {
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
 			case android.R.id.home:
-				onBackPressed();
+				finish();
 				return true;
 			default:
 				return true;
 		}
 	}
-
-    @Override
-    public void onBackPressed() {
-        Intent intent = new Intent(this, SearchActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(intent);
-    }
 	
-	private void clearResultsList() {
-    	ListView lv = (ListView) findViewById(R.id.results_list);
-    	ArrayAdapter<String> adapter = (ArrayAdapter<String>) lv.getAdapter();
-    	if (adapter != null) {
-    		adapter.clear();
-    		adapter.notifyDataSetChanged();
-    	}
-    }
-	
-	private void showMatchCount(int matches) {
+    private void showMatchCount(int matches) {
     	TextView matchText = (TextView) findViewById(R.id.match_text);
     	matchText.setText(""+matches+" cards found");
     	matchText.setVisibility(View.VISIBLE);

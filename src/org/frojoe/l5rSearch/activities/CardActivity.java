@@ -40,6 +40,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map.Entry;
 
+@SuppressWarnings("ResourceType")
 public class CardActivity extends Activity implements View.OnClickListener {
 	
 	final static int GOLD_ICON_SIZE = 47;
@@ -75,11 +76,15 @@ public class CardActivity extends Activity implements View.OnClickListener {
         pos = getIntent().getExtras().getInt(Constants.INTENT_POS);
         urlLaunch = getIntent().getBooleanExtra(Constants.INTENT_URLLAUNCH, false);
 		setProgressBarIndeterminateVisibility(true);
-		if (card.getData().isEmpty())
-			new ConsultTheOracleTask().execute(card);
-		else
-			populateView();
-
+        if (card != null) {
+            if (card.getData().isEmpty())
+                new ConsultTheOracleTask().execute(card);
+            else
+                populateView();
+        } else {
+           Toaster toaster = new Toaster(this);
+           toaster.toast("Card details failed to load");
+        }
         gestureDetector = new GestureDetector(this, new MyGestureDetector());
         gestureListener = new View.OnTouchListener() {
             @Override
@@ -140,9 +145,8 @@ public class CardActivity extends Activity implements View.OnClickListener {
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
-		
 			case android.R.id.home:
-				onBackPressed();
+                finish();
                 return true;
 			case R.id.card_menu_image:
 				viewImage();
@@ -158,28 +162,12 @@ public class CardActivity extends Activity implements View.OnClickListener {
 				return true;
 		}
 	}
-
-    @Override
-    public void onBackPressed() {
-        if (!urlLaunch) {
-            Intent intent;
-            if (cards != null && !cards.isEmpty()) {
-                intent = new Intent(this, ResultsActivity.class);
-                intent.putParcelableArrayListExtra(Constants.INTENT_CARDS, cards);
-            } else {
-                intent = new Intent(this, SearchActivity.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            }
-            startActivity(intent);
-        } else
-            super.onBackPressed();
-    }
 	
 	@SuppressLint("NewApi")
 	private void addHomeButton() {
 		ActionBar actionBar = getActionBar();
-	    actionBar.setDisplayHomeAsUpEnabled(true);
+        if (actionBar != null)
+	        actionBar.setDisplayHomeAsUpEnabled(true);
 	}
 	
 	private void viewImage() {
