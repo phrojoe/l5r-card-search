@@ -112,18 +112,7 @@ public class Search {
 		}
 		return cards;
 	}
-	
-//	private Card parseScriptSource(String scriptSource) {
-//		Card card = null;
-//		if (scriptSource.contains("$.post")) {
-//			int urlLocBeg = scriptSource.indexOf("location.hash='")+15;
-//			int urlLocEnd = scriptSource.indexOf("'",urlLocBeg);
-//			card = new Card();
-//			card.setLink(scriptSource.substring(urlLocBeg,urlLocEnd));
-//		}
-//		return card;
-//	}
-	
+
 	private Card parseCardLine(String cardLine) {
 		Card card = new Card();
 		Matcher linkMatcher = CARD_LINK_PATTERN.matcher(cardLine);
@@ -134,14 +123,7 @@ public class Search {
 			card.setTitle(StringCleaner.clean(titleMatcher.group(1)));
 		return card;
 	}
-	
-//	private int parseMatchLine(Element matchLine) {
-//		String value = matchLine.text();
-//		String m = value.substring(0, value.indexOf(" "));
-//		return Integer.parseInt(m);
-//	}
 
-	
 	private String getPageStr() {
 		return ""+page;
 	}
