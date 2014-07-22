@@ -322,13 +322,13 @@ public class SearchActivity extends Activity {
 			Search cardSearch = new Search(searchParams);
 	    	ArrayList<Card> cards = new ArrayList<Card>(0);
 	    	try {
-				cardSearch.execute();
-				cards.addAll(cardSearch.parseResponse());
+				List<Card> results = cardSearch.sendQuery();
+				cards.addAll(results);
 				Log.d("Matches",""+cardSearch.getMatches());
 				while (cards.size() < cardSearch.getMatches()) {
 					cardSearch.incPage();
-					cardSearch.execute();
-					cards.addAll(cardSearch.parseResponse());
+					List<Card> moreResults = cardSearch.sendQuery();
+					cards.addAll(moreResults);
 				}
 	    	} catch (IllegalStateException e) {
 	    		Log.e(Constants.APP_NAME,"IllegalStateException",e);

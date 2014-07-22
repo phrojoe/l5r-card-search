@@ -33,39 +33,37 @@ public class ResultsActivity extends Activity {
 		setContentView(R.layout.results);
 		if (ICS_COMPATIBLE)
 			addHomeButton();
+
 		final ListView lv = (ListView) findViewById(R.id.results_list);
 		    lv.setOnItemClickListener(new OnItemClickListener() {
 				@Override
-		    	public void onItemClick(AdapterView<?> adapter, View view, 
-						int pos, long lng) {
+		    	public void onItemClick(AdapterView<?> adapter, View view, int pos, long lng) {
 					Card card = cards.get(pos);
-					Intent intent = 
-							new Intent(view.getContext(), CardActivity.class);
+					Intent intent = new Intent(view.getContext(), CardActivity.class);
 					intent.putExtra(Constants.INTENT_CARD, card);
                     intent.putParcelableArrayListExtra(Constants.INTENT_CARDS, cards);
                     intent.putExtra(Constants.INTENT_POS, pos);
-				startActivity(intent);
-			}
+				    startActivity(intent);
+			    }
 		});
+
 		cards = getIntent().getExtras().getParcelableArrayList(Constants.INTENT_CARDS);
 		if (cards != null)
             populateResults(cards);
         else {
             Toaster toaster = new Toaster(this);
             toaster.toast("Results list is empty");
-            onBackPressed();
+            finish();
         }
 	}
-	
+
 	private void populateResults(ArrayList<Card> cards) {
 		List<String> values = new ArrayList<String>();
     	for (Card card : cards)
 			values.add(card.getTitle());
 		ListView lv = (ListView) findViewById(R.id.results_list);
-    	ArrayAdapter<String> adapter = new ArrayAdapter<String>(
-    			ResultsActivity.this,
-    			android.R.layout.simple_list_item_1,
-    			values);
+    	ArrayAdapter<String> adapter =
+                new ArrayAdapter<String>(ResultsActivity.this, android.R.layout.simple_list_item_1, values);
     	lv.setAdapter(adapter);
     	lv.setVisibility(View.VISIBLE);
     	showMatchCount(cards.size());
@@ -75,7 +73,7 @@ public class ResultsActivity extends Activity {
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
 			case android.R.id.home:
-				finish();
+                finish();
 				return true;
 			default:
 				return true;
@@ -91,6 +89,7 @@ public class ResultsActivity extends Activity {
 	@SuppressLint("NewApi")
 	private void addHomeButton() {
 		ActionBar actionBar = getActionBar();
-	    actionBar.setDisplayHomeAsUpEnabled(true);
+        if (actionBar != null)
+	        actionBar.setDisplayHomeAsUpEnabled(true);
 	}
 }

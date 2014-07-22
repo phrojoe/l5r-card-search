@@ -16,7 +16,7 @@ import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class Card implements Parcelable {
+public class Card implements Parcelable, Cloneable {
 
     public static final Pattern CARDID_PATTERN =
             Pattern.compile("cardid=(\\d+)");
@@ -37,14 +37,14 @@ public class Card implements Parcelable {
 		this.imgUrl = imgUrl;
 		data = new TreeMap<String,String>();
 	}
-	
-	public void clone(Card anotherCard) {
-		title = anotherCard.getTitle();
-		link = anotherCard.getLink();
-		imgUrl = anotherCard.getImgUrl();
-		image = anotherCard.getImage();
-		data = new TreeMap<String,String>();
-		data.putAll(anotherCard.getData());
+
+	public Card clone() {
+        Card card = new Card();
+        card.title = title;
+        card.link = link;
+        card.imgUrl = imgUrl;
+        card.data.putAll(data);
+        return card;
 	}
 	
 	public String getImgUrl() {

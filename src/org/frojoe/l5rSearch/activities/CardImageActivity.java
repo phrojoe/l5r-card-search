@@ -18,7 +18,7 @@ import org.apache.http.client.ClientProtocolException;
 import org.frojoe.l5rSearch.BitmapCache;
 import org.frojoe.l5rSearch.Card;
 import org.frojoe.l5rSearch.R;
-import org.frojoe.l5rSearch.oracle.CardQuery;
+import org.frojoe.l5rSearch.oracle.Search;
 import org.frojoe.l5rSearch.util.Constants;
 import org.frojoe.l5rSearch.util.Toaster;
 
@@ -42,9 +42,8 @@ public class CardImageActivity extends Activity implements View.OnClickListener 
 				android.os.Build.VERSION_CODES.ICE_CREAM_SANDWICH;
 
     private GestureDetector gestureDetector;
-    private View.OnTouchListener gestureListener;
 
-	@Override
+    @Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
@@ -58,7 +57,7 @@ public class CardImageActivity extends Activity implements View.OnClickListener 
         String cardTitle = getIntent().getStringExtra(Constants.INTENT_CARDTITLE);
         prepLayout(cardTitle);
         gestureDetector = new GestureDetector(this, new MyGestureDetector());
-        gestureListener = new View.OnTouchListener() {
+        View.OnTouchListener gestureListener = new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 return gestureDetector.onTouchEvent(event);
@@ -70,14 +69,16 @@ public class CardImageActivity extends Activity implements View.OnClickListener 
 
     private void prepLayout(String cardTitle) {
         setTitle(cardTitle);
+
         if (icsCompat)
             addHomeButton();
+
         Bitmap image = null;
         if (((BitmapCache)getApplication()).cacheInit())
-            image = ((BitmapCache)getApplication())
-                    .getBitmapFromMemCache(imgUrl);
+            image = ((BitmapCache)getApplication()).getBitmapFromMemCache(imgUrl);
         else
             ((BitmapCache)getApplication()).createCache(this);
+
         if (image == null) {
             Log.d("Debug","downloading image");
             setProgressBarIndeterminateVisibility(true);
@@ -90,7 +91,7 @@ public class CardImageActivity extends Activity implements View.OnClickListener 
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
 			case android.R.id.home:
-				finish();
+                finish();
 				return true;
             case R.id.card_menu_details:
                 loadDetails();
@@ -103,7 +104,8 @@ public class CardImageActivity extends Activity implements View.OnClickListener 
 	@SuppressLint("NewApi")
 	private void addHomeButton() {
 		ActionBar actionBar = getActionBar();
-	    actionBar.setDisplayHomeAsUpEnabled(true);
+        if (actionBar != null)
+	        actionBar.setDisplayHomeAsUpEnabled(true);
 	}
 
     @SuppressLint("NewApi")
@@ -195,14 +197,11 @@ public class CardImageActivity extends Activity implements View.OnClickListener 
 		
 		protected void onPostExecute(Bitmap image) {
 			setProgressBarIndeterminateVisibility(false);
-			if (image != null && 
-				image.getRowBytes()*image.getHeight() > Constants.MIN_BYTES) {
-				((BitmapCache)getApplication()).
-					addBitmapToMemoryCache(imgUrl, image);
+			if (image != null && image.getRowBytes()*image.getHeight() > Constants.MIN_BYTES) {
+				((BitmapCache)getApplication()).addBitmapToMemoryCache(imgUrl, image);
 				displayImage(image);
 			} else {
-				TextView noImageView = 
-						(TextView) findViewById(R.id.no_image_view);
+				TextView noImageView = (TextView) findViewById(R.id.no_image_view);
 				noImageView.setVisibility(View.VISIBLE);
 			}
 		}
@@ -210,9 +209,9 @@ public class CardImageActivity extends Activity implements View.OnClickListener 
 	
 	public Bitmap loadBitmap(String url) {
 		try {
-            Bitmap bitmap = BitmapFactory.decodeStream(
-                    (InputStream) new URL(url).getContent());
-			  return bitmap;
+
+            return BitmapFactory.decodeStream((InputStream) new URL(url).getContent());
+
 			} catch (MalformedURLException mue) {
                 Log.e(Constants.APP_NAME, "MalformedURLException", mue);
 			} catch (IOException ioe) {
@@ -222,9 +221,9 @@ public class CardImageActivity extends Activity implements View.OnClickListener 
                 Log.i(Constants.APP_NAME, "clearing bitmap cache");
                 ((BitmapCache)getApplication()).recycle();
                 try {
-                    Bitmap bitmap = BitmapFactory.decodeStream(
-                            (InputStream) new URL(url).getContent());
-                    return bitmap;
+
+                    return BitmapFactory.decodeStream((InputStream) new URL(url).getContent());
+
                 } catch (MalformedURLException mue) {
                     Log.e(Constants.APP_NAME, "MalformedURLException", mue);
                 } catch (IOException ioe) {
@@ -239,12 +238,10 @@ public class CardImageActivity extends Activity implements View.OnClickListener 
     private class ConsultTheOracleTask extends AsyncTask<Card,String,Card> {
 
         protected Card doInBackground(Card... card) {
-            CardQuery cardQuery = new CardQuery(card[0]);
+            Search cardSearch = new Search(card[0]);
             Card theCard = null;
             try {
-                cardQuery.execute();
-                cardQuery.parseResponse();
-                theCard = card[0];
+                theCard = cardSearch.updateCard();
             } catch (IllegalStateException e) {
                 Log.e(Constants.APP_NAME,"IllegalStateException",e);
             } catch (ClientProtocolException e) {
