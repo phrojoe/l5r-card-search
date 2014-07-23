@@ -423,7 +423,7 @@ public class Constants {
 		SPINNER_VALUE_MAP.put("Uncommon","Uncommon");
 		SPINNER_VALUE_MAP.put("Legality","Legality");
 		SPINNER_VALUE_MAP.put("Age of Conquest (Emperor)","Age&nbsp;of&nbsp;Conquest&nbsp;(Emperor)");
-        //SPINNER_VALUE_MAP.put("Ivory Edition", "Ivory Edition"); identical to set value, here for clarity
+        SPINNER_VALUE_MAP.put("A Brother\'s Destiny (Ivory)", "A&nbsp;Brother's&nbsp;Destiny&nbsp;(Ivory&nbsp;Edition)");
 		SPINNER_VALUE_MAP.put("Ivory Edition Part 2","Ivory Edition Part 2");
 		SPINNER_VALUE_MAP.put("Destroyer War (Celestial)","Destroyer&nbsp;War&nbsp;(Celestial)");
 		SPINNER_VALUE_MAP.put("Race for the Throne (Samurai)","Race&nbsp;for&nbsp;the&nbsp;Throne&nbsp;(Samurai)");
