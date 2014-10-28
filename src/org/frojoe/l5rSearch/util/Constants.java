@@ -389,6 +389,7 @@ public class Constants {
 		SPINNER_VALUE_MAP.put("The Imperial Gift 1","The Imperial Gift 1");
 		SPINNER_VALUE_MAP.put("The Imperial Gift 2","The Imperial Gift 2");
 		SPINNER_VALUE_MAP.put("The Imperial Gift 3","The Imperial Gift 3");
+        SPINNER_VALUE_MAP.put("The New Order", "The New Order");
 		SPINNER_VALUE_MAP.put("The Plague War","The Plague War");
 		SPINNER_VALUE_MAP.put("The Shadow\'s Embrace","The Shadow\'s Embrace");
 		SPINNER_VALUE_MAP.put("The Truest Test","The Truest Test");
