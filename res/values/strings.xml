@@ -197,6 +197,7 @@
 		<item>Seeds of Decay</item>
 		<item>Shadowlands</item>
 		<item>Siege of Sleeping Mountain</item>
+		<item>Siege: Heart of Darkness</item>
 		<item>Soul of the Empire</item>
 		<item>Storms Over Matsu Palace</item>
 		<item>Stronger Than Steel</item>
@@ -227,15 +228,16 @@
 		<item>Winds of Change</item>
 		<item>Words and Deeds</item>
 		<item>Wrath of the Emperor</item>
-		<item>Promotional–Celestial</item>
-		<item>Promotional–CWF</item>
-		<item>Promotional–Diamond</item>
-		<item>Promotional–Emperor</item>
-		<item>Promotional–Gold</item>
-		<item>Promotional–Imperial</item>
-		<item>Promotional–Jade</item>
-		<item>Promotional–Lotus</item>
-		<item>Promotional–Samurai</item>
+		<item>Promotional-Celestial</item>
+		<item>Promotional-CWF</item>
+		<item>Promotional-Diamond</item>
+		<item>Promotional-Emperor</item>
+		<item>Promotional-Gold</item>
+		<item>Promotional-Imperial</item>
+		<item>Promotional-Ivory</item>
+		<item>Promotional-Jade</item>
+		<item>Promotional-Lotus</item>
+		<item>Promotional-Samurai</item>
     </string-array>
     <string-array name="rarities">
         <item>Rarity</item>

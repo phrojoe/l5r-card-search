@@ -375,6 +375,7 @@ public class Constants {
 		SPINNER_VALUE_MAP.put("Seeds of Decay","Seeds of Decay");
 		SPINNER_VALUE_MAP.put("Shadowlands","Shadowlands");
 		SPINNER_VALUE_MAP.put("Siege of Sleeping Mountain","Siege of Sleeping Mountain");
+		SPINNER_VALUE_MAP.put("Siege: Heart of Darkness", "Siege: Heart of Darkness");
 		SPINNER_VALUE_MAP.put("Soul of the Empire","Soul of the Empire");
 		SPINNER_VALUE_MAP.put("Storms Over Matsu Palace","Storms Over Matsu Palace");
 		SPINNER_VALUE_MAP.put("Stronger Than Steel","Stronger Than Steel");
@@ -411,6 +412,7 @@ public class Constants {
 		SPINNER_VALUE_MAP.put("Promotional–Emperor","Promotional&ndash;Emperor");
 		SPINNER_VALUE_MAP.put("Promotional–Gold","Promotional&ndash;Gold");
 		SPINNER_VALUE_MAP.put("Promotional–Imperial","Promotional&ndash;Imperial");
+		SPINNER_VALUE_MAP.put("Promotional-Ivory","Promotional&ndash;Ivory");
 		SPINNER_VALUE_MAP.put("Promotional–Jade","Promotional&ndash;Jade");
 		SPINNER_VALUE_MAP.put("Promotional–Lotus","Promotional&ndash;Lotus");
 		SPINNER_VALUE_MAP.put("Promotional–Samurai","Promotional&ndash;Samurai");
