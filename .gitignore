@@ -2,3 +2,4 @@ gen/
 .idea/
 l5r-card-search.iml
 *.sublime*
+proguard_logs/
