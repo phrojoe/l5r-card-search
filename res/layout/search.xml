@@ -5,7 +5,7 @@
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
-    
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -36,7 +36,13 @@
 		    android:contentDescription="@string/button_cancel"
 		    android:onClick="cancelSearch"
 		    android:visibility="gone"/>
-        
+
+        <ProgressBar
+            android:id="@+id/progress_marker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"/>
+
     </LinearLayout>
    
     <ScrollView

@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map.Entry;
 import java.util.Set;
 
+import android.widget.*;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.message.BasicNameValuePair;
@@ -32,12 +33,6 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
-import android.widget.CheckBox;
-import android.widget.EditText;
-import android.widget.ImageButton;
-import android.widget.RelativeLayout;
-import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.TextView.OnEditorActionListener;
 
 @SuppressWarnings("ResourceType")
@@ -50,7 +45,7 @@ public class SearchActivity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
+        //requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
         setContentView(R.layout.search);
         initEditTexts();
         initRangeSeekBars();
@@ -211,13 +206,15 @@ public class SearchActivity extends Activity {
     	RelativeLayout advSearchFields = 
     			(RelativeLayout) findViewById(R.id.adv_search_layout);
     	advSearchFields.setVisibility(
-    			advSearchFields.getVisibility() == View.GONE
-    			? View.VISIBLE
-    			: View.GONE );
+                advSearchFields.getVisibility() == View.GONE
+                        ? View.VISIBLE
+                        : View.GONE);
     }
     
     public void search(View view) {
-    	setProgressBarIndeterminateVisibility(true);
+    	//setProgressBarIndeterminateVisibility(true);
+        ProgressBar bar = (ProgressBar) findViewById(R.id.progress_marker);
+        bar.setVisibility(View.VISIBLE);
     	toggleSearchButton();
     	searchTask = new ConsultTheOracleTask();
     	searchTask.execute(getQueryParams());
@@ -226,7 +223,9 @@ public class SearchActivity extends Activity {
     public void cancelSearch(View view) {
     	searchTask.cancel(true);
     	toggleSearchButton();
-    	setProgressBarIndeterminateVisibility(false);
+    	//setProgressBarIndeterminateVisibility(false);
+        ProgressBar bar = (ProgressBar) findViewById(R.id.progress_marker);
+        bar.setVisibility(View.GONE);
     }
     
     private BasicNameValuePair[] getQueryParams() {
@@ -353,8 +352,10 @@ public class SearchActivity extends Activity {
 					default:
 						populateListView(results);
 				}
-				setProgressBarIndeterminateVisibility(false);
-				toggleSearchButton();
+				//setProgressBarIndeterminateVisibility(false);
+                ProgressBar bar = (ProgressBar) findViewById(R.id.progress_marker);
+                bar.setVisibility(View.GONE);
+                toggleSearchButton();
 			}
 		}
     	
