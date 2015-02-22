@@ -271,6 +271,7 @@ public class Constants {
 		SPINNER_VALUE_MAP.put("Card Type","Card Type");
 		SPINNER_VALUE_MAP.put("Ancestor","Ancestor");
 		SPINNER_VALUE_MAP.put("Celestial","Celestial");
+        SPINNER_VALUE_MAP.put("Clock", "Clock");
 		SPINNER_VALUE_MAP.put("Event","Event");
 		SPINNER_VALUE_MAP.put("Follower","Follower");
 		SPINNER_VALUE_MAP.put("Holding","Holding");
@@ -284,6 +285,7 @@ public class Constants {
 		SPINNER_VALUE_MAP.put("Spell","Spell");
 		SPINNER_VALUE_MAP.put("Strategy","Strategy");
 		SPINNER_VALUE_MAP.put("Stronghold","Stronghold");
+        SPINNER_VALUE_MAP.put("Territory", "Territory");
 		SPINNER_VALUE_MAP.put("Wind","Wind");
 		SPINNER_VALUE_MAP.put("Clan","Clan");
 		SPINNER_VALUE_MAP.put("Brotherhood of Shinsei","Brotherhood of Shinsei");
@@ -382,6 +384,7 @@ public class Constants {
 		SPINNER_VALUE_MAP.put("Test of Enlightenment","Test of Enlightenment");
 		SPINNER_VALUE_MAP.put("Test of the Emerald and Jade Championships","Test of the Emerald and Jade Championships");
         SPINNER_VALUE_MAP.put("The Coming Storm", "The Coming Storm");
+        SPINNER_VALUE_MAP.put("The Currency of War", "The Currency of War");
 		SPINNER_VALUE_MAP.put("The Dark Journey Home","The Dark Journey Home");
 		SPINNER_VALUE_MAP.put("The Dead of Winter","The Dead of Winter");
 		SPINNER_VALUE_MAP.put("The Fall of Otosan Uchi","The Fall of Otosan Uchi");
@@ -401,6 +404,7 @@ public class Constants {
 		SPINNER_VALUE_MAP.put("Torn Asunder","Torn Asunder");
 		SPINNER_VALUE_MAP.put("Training Grounds","Training Grounds");
 		SPINNER_VALUE_MAP.put("Training Grounds 2","Training Grounds 2");
+        SPINNER_VALUE_MAP.put("Twenty Festivals","Twenty Festivals");
 		SPINNER_VALUE_MAP.put("War of Honor","War of Honor");
 		SPINNER_VALUE_MAP.put("Web of Lies","Web of Lies");
 		SPINNER_VALUE_MAP.put("Winds of Change","Winds of Change");
@@ -416,6 +420,7 @@ public class Constants {
 		SPINNER_VALUE_MAP.put("Promotional–Jade","Promotional&ndash;Jade");
 		SPINNER_VALUE_MAP.put("Promotional–Lotus","Promotional&ndash;Lotus");
 		SPINNER_VALUE_MAP.put("Promotional–Samurai","Promotional&ndash;Samurai");
+        SPINNER_VALUE_MAP.put("Promotional-Twenty Festivals", "Promotional&amp;ndash;Twenty Festivals");
 		SPINNER_VALUE_MAP.put("Rarity","Rarity");
 		SPINNER_VALUE_MAP.put("Common","Common");
 		SPINNER_VALUE_MAP.put("Fixed","Fixed");
@@ -425,9 +430,10 @@ public class Constants {
 		SPINNER_VALUE_MAP.put("Rare","Rare");
 		SPINNER_VALUE_MAP.put("Uncommon","Uncommon");
 		SPINNER_VALUE_MAP.put("Legality","Legality");
-		SPINNER_VALUE_MAP.put("Age of Conquest (Emperor)","Age&nbsp;of&nbsp;Conquest&nbsp;(Emperor)");
+        SPINNER_VALUE_MAP.put("Onyx Edition", "Onyx Edition");
+        SPINNER_VALUE_MAP.put("Twenty Festivals", "Twenty Festivals");
+        SPINNER_VALUE_MAP.put("Age of Conquest (Emperor)","Age&nbsp;of&nbsp;Conquest&nbsp;(Emperor)");
         SPINNER_VALUE_MAP.put("A Brother\'s Destiny (Ivory)", "A&nbsp;Brother's&nbsp;Destiny&nbsp;(Ivory&nbsp;Edition)");
-		SPINNER_VALUE_MAP.put("Ivory Edition Part 2","Ivory Edition Part 2");
 		SPINNER_VALUE_MAP.put("Destroyer War (Celestial)","Destroyer&nbsp;War&nbsp;(Celestial)");
 		SPINNER_VALUE_MAP.put("Race for the Throne (Samurai)","Race&nbsp;for&nbsp;the&nbsp;Throne&nbsp;(Samurai)");
 		SPINNER_VALUE_MAP.put("Age of Enlightenment (Lotus)","Age&nbsp;of&nbsp;Enlightenment&nbsp;(Lotus)");
