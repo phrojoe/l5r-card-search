@@ -398,6 +398,7 @@ public class Constants {
 		SPINNER_VALUE_MAP.put("The Shadow\'s Embrace","The Shadow\'s Embrace");
 		SPINNER_VALUE_MAP.put("The Truest Test","The Truest Test");
 		SPINNER_VALUE_MAP.put("The War of Spirits","The War of Spirits");
+		SPINNER_VALUE_MAP.put("Thunderous Acclaim", "Thunderous Acclaim");
 		SPINNER_VALUE_MAP.put("Time of the Void","Time of the Void");
 		SPINNER_VALUE_MAP.put("Tomorrow","Tomorrow");
 		SPINNER_VALUE_MAP.put("Top Deck Booster Pack","Top Deck Booster Pack");
@@ -431,8 +432,8 @@ public class Constants {
 		SPINNER_VALUE_MAP.put("Uncommon","Uncommon");
 		SPINNER_VALUE_MAP.put("Legality","Legality");
         SPINNER_VALUE_MAP.put("Onyx Edition", "Onyx Edition");
-        SPINNER_VALUE_MAP.put("Twenty Festivals", "Twenty Festivals");
-        SPINNER_VALUE_MAP.put("Age of Conquest (Emperor)","Age&nbsp;of&nbsp;Conquest&nbsp;(Emperor)");
+		SPINNER_VALUE_MAP.put("A Brother\'s Destiny (Twenty Festivals)", "A&nbsp;Brother's&nbsp;Destiny&nbsp;(Twenty&nbsp;Festivals)");
+		SPINNER_VALUE_MAP.put("Age of Conquest (Emperor)","Age&nbsp;of&nbsp;Conquest&nbsp;(Emperor)");
         SPINNER_VALUE_MAP.put("A Brother\'s Destiny (Ivory)", "A&nbsp;Brother's&nbsp;Destiny&nbsp;(Ivory&nbsp;Edition)");
 		SPINNER_VALUE_MAP.put("Destroyer War (Celestial)","Destroyer&nbsp;War&nbsp;(Celestial)");
 		SPINNER_VALUE_MAP.put("Race for the Throne (Samurai)","Race&nbsp;for&nbsp;the&nbsp;Throne&nbsp;(Samurai)");

@@ -220,6 +220,7 @@
         <item>The Shadow\'s Embrace</item>
         <item>The Truest Test</item>
         <item>The War of Spirits</item>
+        <item>Thunderous Acclaim</item>
         <item>Time of the Void</item>
         <item>Tomorrow</item>
         <item>Top Deck Booster Pack</item>
@@ -256,8 +257,8 @@
     </string-array>
     <string-array name="legalities">
         <item>Legality</item>
+        <item>A Brother\'s Destiny (Twenty Festivals)</item>
         <item>Onyx Edition</item>
-        <item>Twenty Festivals</item>
         <item>A Brother\'s Destiny (Ivory)</item>
         <item>Age of Conquest (Emperor)</item>
         <item>Destroyer War (Celestial)</item>
