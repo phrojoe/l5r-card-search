@@ -336,6 +336,7 @@ public class Constants {
 		SPINNER_VALUE_MAP.put("Emperor Edition Gempukku","Emperor Edition Gempukku");
 		SPINNER_VALUE_MAP.put("Empire at War","Empire at War");
 		SPINNER_VALUE_MAP.put("Enemy of My Enemy","Enemy of My Enemy");
+		SPINNER_VALUE_MAP.put("Evil Portents", "Evil Portents");
 		SPINNER_VALUE_MAP.put("Fire and Shadow","Fire and Shadow");
 		SPINNER_VALUE_MAP.put("Forbidden Knowledge","Forbidden Knowledge");
 		SPINNER_VALUE_MAP.put("Forgotten Legacy","Forgotten Legacy");
@@ -377,6 +378,7 @@ public class Constants {
 		SPINNER_VALUE_MAP.put("Seeds of Decay","Seeds of Decay");
 		SPINNER_VALUE_MAP.put("Shadowlands","Shadowlands");
 		SPINNER_VALUE_MAP.put("Siege of Sleeping Mountain","Siege of Sleeping Mountain");
+		SPINNER_VALUE_MAP.put("Siege: Clan War", "Siege: Clan War");
 		SPINNER_VALUE_MAP.put("Siege: Heart of Darkness", "Siege: Heart of Darkness");
 		SPINNER_VALUE_MAP.put("Soul of the Empire","Soul of the Empire");
 		SPINNER_VALUE_MAP.put("Storms Over Matsu Palace","Storms Over Matsu Palace");
